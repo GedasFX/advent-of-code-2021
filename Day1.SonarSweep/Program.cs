@@ -25,11 +25,11 @@ int Part1()
 
 int Part2()
 {
-    var file = File.ReadAllLines("input.txt").Select(int.Parse).ToList();
+    var file = File.ReadLines("input.txt").Select(int.Parse).ToArray();
 
     var counter = 0;
     var prev = file.Take(3).Sum();
-    for (int i = 1; i < file.Count - 2; i++)
+    for (var i = 1; i < file.Length - 2; i++)
     {
         var curr = file.Skip(i).Take(3).Sum();
 
