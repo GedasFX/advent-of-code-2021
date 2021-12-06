@@ -1,0 +1,21 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Day_1_1", "Day_1_1", "{10CE9A47-C471-4B53-9593-1929CB6F4126}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day1_1.SonarSweep", "Day1_1.SonarSweep\Day1_1.SonarSweep.csproj", "{4752A6B5-ED66-400D-ACE2-0C397B298DD8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4752A6B5-ED66-400D-ACE2-0C397B298DD8} = {10CE9A47-C471-4B53-9593-1929CB6F4126}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4752A6B5-ED66-400D-ACE2-0C397B298DD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4752A6B5-ED66-400D-ACE2-0C397B298DD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4752A6B5-ED66-400D-ACE2-0C397B298DD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4752A6B5-ED66-400D-ACE2-0C397B298DD8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
