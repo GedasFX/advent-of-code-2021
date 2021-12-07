@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day1.SonarSweep", "Day1.Son
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day2.Dive", "Day2.Dive\Day2.Dive.csproj", "{1EE7F4A4-C8DD-49B3-B5FC-C31FC44D755D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day3.BinaryDiagnostic", "Day3.BinaryDiagnostic\Day3.BinaryDiagnostic.csproj", "{83171195-2C37-4D34-8E1C-DBC0A162D9D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,5 +22,9 @@ Global
 		{1EE7F4A4-C8DD-49B3-B5FC-C31FC44D755D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EE7F4A4-C8DD-49B3-B5FC-C31FC44D755D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1EE7F4A4-C8DD-49B3-B5FC-C31FC44D755D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83171195-2C37-4D34-8E1C-DBC0A162D9D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83171195-2C37-4D34-8E1C-DBC0A162D9D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83171195-2C37-4D34-8E1C-DBC0A162D9D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83171195-2C37-4D34-8E1C-DBC0A162D9D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
