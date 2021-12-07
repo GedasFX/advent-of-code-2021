@@ -11,36 +11,39 @@ int Part1()
     var counts = file.Aggregate(new int[binLen], (arr, curr) =>
     {
         for (var i = 0; i < binLen; i++)
-        {
-            arr[binLen - i - 1] += (curr & (1 << i)) > 0 ? 1 : 0;
-        }
+            arr[i] += GetBit(curr, i);
 
         return arr;
     });
 
     var gamma = 0;
     for (var i = 0; i < binLen; i++)
-    {
         gamma += (1 << i) * (counts[binLen - i - 1] * 2 / file.Count);
-    }
 
-    var epsilon = ~gamma & 0xFFF;
+    var epsilon = ~gamma & ((1 << binLen) - 1);
 
     return gamma * epsilon;
 }
 
-// Console.WriteLine(Part1()); // 738234
+Console.WriteLine(Part1()); // 738234
 
 byte GetBit(int num, int idx)
 {
     return (byte)((num & (1 << (binLen - idx - 1))) > 0 ? 1 : 0);
 }
 
-int GetBest(IList<int> best, int gamma)
+int GetBest(IList<int> best, byte tiebreaker)
 {
     for (var i = 0; i < binLen; i++)
     {
-        best = best.Where(b => GetBit(b, i) == GetBit(gamma, i)).ToList();
+        var i1 = i;
+        var bitCount = best.Sum(b => GetBit(b, i1));
+
+        var popBit = 2 * bitCount == best.Count ? 1 : bitCount * 2 / best.Count;
+        if (tiebreaker == 0)
+            popBit = popBit == 1 ? 0 : 1;
+
+        best = best.Where(b => GetBit(b, i) == popBit).ToList();
 
         if (best.Count == 1)
             break;
@@ -55,27 +58,15 @@ int Part2()
     var counts = file.Aggregate(new int[binLen], (arr, curr) =>
     {
         for (var i = 0; i < binLen; i++)
-        {
-            arr[binLen - i - 1] += (curr & (1 << i)) > 0 ? 1 : 0;
-        }
+            arr[i] += GetBit(curr, i);
 
         return arr;
     });
 
-    var gamma = 0;
-    for (var i = 0; i < binLen; i++)
-    {
-        gamma += (1 << i) * (counts[binLen - i - 1] * 2 / file.Count);
-    }
-
-    var epsilon = ~gamma & 0xFFF;
-
-
-    var oxygen = GetBest(file, gamma);
-    var co2 = GetBest(file, epsilon);
-
+    var oxygen = GetBest(file, 1);
+    var co2 = GetBest(file, 0);
 
     return oxygen * co2;
 }
 
-Console.WriteLine(Part2()); // 738423
+Console.WriteLine(Part2()); // 3969126
